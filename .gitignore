@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Visual Studio Code settings directory
 .vscode/
+
+# Identity Server Generated RSA key
+tempkey.rsa
