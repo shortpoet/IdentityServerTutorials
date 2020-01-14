@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,23 +18,39 @@ namespace Api
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
+
       services.AddAuthentication("Bearer")
-        .AddJwtBearer("Bearer", options => {
+        .AddIdentityServerAuthentication(options => 
+        {
           options.Authority = "http://localhost:5000";
           options.RequireHttpsMetadata = false;
-          options.Audience = "api1";
+          options.ApiName = "api1";
         });
+        
+      services.AddCors(options =>
+      {
+          // this defines a CORS policy called "default"
+        options.AddPolicy("default", policy =>
+        {
+          policy.WithOrigins("http://localhost:5003")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+      });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    // public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app)
     {
-      if (env.IsDevelopment())
-      {
-          app.UseDeveloperExceptionPage();
-      }
+      // if (env.IsDevelopment())
+      // {
+      //     app.UseDeveloperExceptionPage();
+      // }
 
       app.UseRouting();
+
+      app.UseCors("default");
 
       app.UseAuthentication();
       app.UseAuthorization();

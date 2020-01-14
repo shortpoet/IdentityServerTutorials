@@ -1,0 +1,605 @@
+You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+
+[18:14:35 Information] IdentityServer4.Startup
+Using the default authentication scheme Cookies for IdentityServer
+
+[18:14:35 Debug] IdentityServer4.Startup
+Using Cookies as default ASP.NET Core scheme for authentication
+
+[18:14:35 Debug] IdentityServer4.Startup
+Using Cookies as default ASP.NET Core scheme for sign-in
+
+[18:14:35 Debug] IdentityServer4.Startup
+Using Cookies as default ASP.NET Core scheme for sign-out
+
+[18:14:35 Debug] IdentityServer4.Startup
+Using null as default ASP.NET Core scheme for challenge
+
+[18:14:35 Debug] IdentityServer4.Startup
+Using null as default ASP.NET Core scheme for forbid
+
+[18:15:04 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CORS request made for path: /.well-known/openid-configuration from origin: https://localhost:5004
+
+[18:15:04 Debug] IdentityServer4.Services.InMemoryCorsPolicyService
+Client list checked and origin: https://localhost:5004 is allowed
+
+[18:15:04 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CorsPolicyService allowed origin: https://localhost:5004
+
+[18:15:04 Debug] IdentityServer4.Startup
+Login Url: /Account/Login
+
+[18:15:04 Debug] IdentityServer4.Startup
+Login Return Url Parameter: ReturnUrl
+
+[18:15:04 Debug] IdentityServer4.Startup
+Logout Url: /Account/Logout
+
+[18:15:04 Debug] IdentityServer4.Startup
+ConsentUrl Url: /consent
+
+[18:15:04 Debug] IdentityServer4.Startup
+Consent Return Url Parameter: returnUrl
+
+[18:15:04 Debug] IdentityServer4.Startup
+Error Url: /home/error
+
+[18:15:04 Debug] IdentityServer4.Startup
+Error Id Parameter: errorId
+
+[18:15:04 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration matched to endpoint type Discovery
+
+[18:15:04 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+
+[18:15:04 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+
+[18:15:04 Debug] IdentityServer4.Endpoints.DiscoveryEndpoint
+Start discovery request
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:05 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/authorize matched to endpoint type Authorize
+
+[18:15:05 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+
+[18:15:05 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+
+[18:15:05 Debug] IdentityServer4.Endpoints.AuthorizeEndpoint
+Start authorize request
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:05 Debug] IdentityServer4.Endpoints.AuthorizeEndpoint
+No user present in authorize request
+
+[18:15:05 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:15:05 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:15:05 Error] IdentityServer4.Validation.AuthorizeRequestValidator
+Invalid redirect_uri: https://localhost:5002/callback.html
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": null, "AllowedRedirectUris": ["https://localhost:5004/callback.html"], "SubjectId": "anonymous", "ResponseType": null, "ResponseMode": null, "GrantType": null, "RequestedScopes": "", "State": null, "UiLocales": null, "Nonce": null, "AuthenticationContextReferenceClasses": null, "DisplayMode": null, "PromptMode": null, "MaxAge": null, "LoginHint": null, "SessionId": null, "Raw": {"client_id": "js", "redirect_uri": "https://localhost:5002/callback.html", "response_type": "code", "scope": "openid profile api1", "state": "7bdf2b87e4244089acded84aeec819af", "code_challenge": "pmehCLFy9sAARfJf9ZTLL2YNMpf_sQ1KF7qTeEDTYcE", "code_challenge_method": "S256", "response_mode": "query"}, "$type": "AuthorizeRequestValidationLog"}
+
+[18:15:05 Error] IdentityServer4.Endpoints.AuthorizeEndpoint
+Request validation failed
+
+[18:15:05 Information] IdentityServer4.Endpoints.AuthorizeEndpoint
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": null, "AllowedRedirectUris": ["https://localhost:5004/callback.html"], "SubjectId": "anonymous", "ResponseType": null, "ResponseMode": null, "GrantType": null, "RequestedScopes": "", "State": null, "UiLocales": null, "Nonce": null, "AuthenticationContextReferenceClasses": null, "DisplayMode": null, "PromptMode": null, "MaxAge": null, "LoginHint": null, "SessionId": null, "Raw": {"client_id": "js", "redirect_uri": "https://localhost:5002/callback.html", "response_type": "code", "scope": "openid profile api1", "state": "7bdf2b87e4244089acded84aeec819af", "code_challenge": "pmehCLFy9sAARfJf9ZTLL2YNMpf_sQ1KF7qTeEDTYcE", "code_challenge_method": "S256", "response_mode": "query"}, "$type": "AuthorizeRequestValidationLog"}
+
+[18:15:05 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": null, "Endpoint": "Authorize", "SubjectId": null, "Scopes":
+"", "GrantType": null, "Error": "unauthorized_client", "ErrorDescription": "Invalid redirect_uri", "Category": "Token", "Name": "Token Issued Failure", "EventType": "Failure", "Id": 2001, "Message": null, "ActivityId": "0HLSOGR70BENR:00000011", "TimeStamp":
+"2020-01-14T00:15:05.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type":
+"TokenIssuedFailureEvent"}
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:05 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CORS request made for path: /.well-known/openid-configuration from origin: https://localhost:5004
+
+[18:15:43 Debug] IdentityServer4.Services.InMemoryCorsPolicyService
+Client list checked and origin: https://localhost:5004 is allowed
+
+[18:15:43 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CorsPolicyService allowed origin: https://localhost:5004
+
+[18:15:43 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration matched to endpoint type Discovery
+
+[18:15:43 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+
+[18:15:43 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+
+[18:15:43 Debug] IdentityServer4.Endpoints.DiscoveryEndpoint
+Start discovery request
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/authorize matched to endpoint type Authorize
+
+[18:15:43 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+
+[18:15:43 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+
+[18:15:43 Debug] IdentityServer4.Endpoints.AuthorizeEndpoint
+Start authorize request
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Debug] IdentityServer4.Endpoints.AuthorizeEndpoint
+No user present in authorize request
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:15:43 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:15:43 Debug] IdentityServer4.Endpoints.AuthorizeEndpoint
+ValidatedAuthorizeRequest
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": "https://localhost:5004/callback.html", "AllowedRedirectUris": ["https://localhost:5004/callback.html"], "SubjectId": "anonymous", "ResponseType": "code", "ResponseMode": "query", "GrantType": "authorization_code", "RequestedScopes": "openid profile api1", "State": "0f6262b83b3a4a119604caea0ab6720b", "UiLocales": null, "Nonce": null, "AuthenticationContextReferenceClasses": null, "DisplayMode": null, "PromptMode": null, "MaxAge": null, "LoginHint": null, "SessionId": null, "Raw": {"client_id": "js", "redirect_uri": "https://localhost:5004/callback.html", "response_type": "code", "scope": "openid profile api1", "state": "0f6262b83b3a4a119604caea0ab6720b", "code_challenge": "B9HJvAx5sWGGRAGxuEK04MGwcxB7BoIEjylMwQUhYcI", "code_challenge_method": "S256", "response_mode": "query"}, "$type": "AuthorizeRequestValidationLog"}
+
+[18:15:43 Information] IdentityServer4.ResponseHandling.AuthorizeInteractionResponseGenerator
+Showing login: User is not authenticated
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:15:43 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:15:43 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:15:43 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:10 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:10 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:10 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:10 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:10 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:10 Information] IdentityServer4.Events.DefaultEventService
+{"Username": "bob", "Endpoint": "UI", "ClientId": "js", "Category": "Authentication", "Name": "User Login Failure", "EventType":
+"Failure", "Id": 1001, "Message": "invalid credentials", "ActivityId": "0HLSOGR70BENS:00000015", "TimeStamp": "2020-01-14T00:16:10.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "UserLoginFailureEvent"}
+
+[18:16:10 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:10 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:10 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:10 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:19 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:19 Information] IdentityServer4.Events.DefaultEventService
+{"Username": "bob", "Provider": null, "ProviderUserId": null, "SubjectId": "88421113", "DisplayName": "bob", "Endpoint": "UI", "ClientId": "js", "Category": "Authentication", "Name": "User Login Success", "EventType": "Success", "Id": 1000, "Message": null,
+"ActivityId": "0HLSOGR70BENS:00000021", "TimeStamp": "2020-01-14T00:16:19.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "UserLoginSuccessEvent"}
+
+[18:16:19 Debug] IdentityServer4.Hosting.IdentityServerAuthenticationService
+Augmenting SignInContext
+
+[18:16:19 Debug] IdentityServer4.Hosting.IdentityServerAuthenticationService
+Adding idp claim with value: local
+
+[18:16:19 Debug] IdentityServer4.Hosting.IdentityServerAuthenticationService
+Adding amr claim with value: pwd
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+Cookies was not authenticated. Failure message: Unprotect ticket failed
+
+[18:16:19 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: Cookies signed in.
+
+[18:16:19 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:19 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/authorize/callback matched to endpoint type Authorize
+
+[18:16:19 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+
+[18:16:19 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+
+[18:16:19 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+Start authorize callback request
+
+[18:16:19 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+User in authorize request: 88421113
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:19 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:19 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+ValidatedAuthorizeRequest
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": "https://localhost:5004/callback.html", "AllowedRedirectUris": ["https://localhost:5004/callback.html"], "SubjectId": "88421113", "ResponseType": "code", "ResponseMode": "query", "GrantType": "authorization_code", "RequestedScopes": "openid profile api1", "State": "0f6262b83b3a4a119604caea0ab6720b", "UiLocales": null, "Nonce": null, "AuthenticationContextReferenceClasses": null, "DisplayMode": null, "PromptMode": null, "MaxAge": null, "LoginHint": null, "SessionId": "izIGDOwJktOMCGTU5uQFZQ", "Raw": {"client_id": "js", "redirect_uri": "https://localhost:5004/callback.html", "response_type": "code", "scope": "openid profile api1", "state": "0f6262b83b3a4a119604caea0ab6720b", "code_challenge": "B9HJvAx5sWGGRAGxuEK04MGwcxB7BoIEjylMwQUhYcI", "code_challenge_method": "S256", "response_mode": "query"}, "$type": "AuthorizeRequestValidationLog"}
+
+[18:16:19 Debug] IdentityServer4.Test.TestUserProfileService
+IsActive called from: AuthorizeEndpoint
+
+[18:16:19 Debug] IdentityServer4.Stores.DefaultUserConsentStore
+user_consent grant with value: js|88421113 not found in store.
+
+[18:16:19 Debug] IdentityServer4.Services.DefaultConsentService
+Found no prior consent from consent store, consent is required
+
+[18:16:19 Information] IdentityServer4.ResponseHandling.AuthorizeInteractionResponseGenerator
+Showing consent: User has not yet consented
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:19 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:19 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:19 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:24 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:24 Information] IdentityServer4.Events.DefaultEventService
+{"SubjectId": "88421113", "ClientId": "js", "RequestedScopes": ["openid", "profile", "api1"], "GrantedScopes": ["openid", "profile", "api1"], "ConsentRemembered": true, "Category": "Grants", "Name": "Consent granted", "EventType": "Information", "Id": 4000,
+"Message": null, "ActivityId": "0HLSOGR70BENS:00000033", "TimeStamp": "2020-01-14T00:16:24.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "ConsentGrantedEvent"}
+
+[18:16:24 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:24 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/authorize/callback matched to endpoint type Authorize
+
+[18:16:24 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+
+[18:16:24 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+
+[18:16:24 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+Start authorize callback request
+
+[18:16:24 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+User in authorize request: 88421113
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Start authorize request protocol validation
+
+[18:16:24 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Checking for PKCE parameters
+
+[18:16:24 Debug] IdentityServer4.Validation.AuthorizeRequestValidator
+Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+
+[18:16:24 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+ValidatedAuthorizeRequest
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": "https://localhost:5004/callback.html", "AllowedRedirectUris": ["https://localhost:5004/callback.html"], "SubjectId": "88421113", "ResponseType": "code", "ResponseMode": "query", "GrantType": "authorization_code", "RequestedScopes": "openid profile api1", "State": "0f6262b83b3a4a119604caea0ab6720b", "UiLocales": null, "Nonce": null, "AuthenticationContextReferenceClasses": null, "DisplayMode": null, "PromptMode": null, "MaxAge": null, "LoginHint": null, "SessionId": "izIGDOwJktOMCGTU5uQFZQ", "Raw": {"client_id": "js", "redirect_uri": "https://localhost:5004/callback.html", "response_type": "code", "scope": "openid profile api1", "state": "0f6262b83b3a4a119604caea0ab6720b", "code_challenge": "B9HJvAx5sWGGRAGxuEK04MGwcxB7BoIEjylMwQUhYcI", "code_challenge_method": "S256", "response_mode": "query"}, "$type": "AuthorizeRequestValidationLog"}
+
+[18:16:24 Debug] IdentityServer4.Test.TestUserProfileService
+IsActive called from: AuthorizeEndpoint
+
+[18:16:24 Debug] IdentityServer4.Stores.DefaultUserConsentStore
+user_consent grant with value: js|88421113 not found in store.
+
+[18:16:24 Debug] IdentityServer4.Services.DefaultConsentService
+Found no prior consent from consent store, consent is required
+
+[18:16:24 Information] IdentityServer4.ResponseHandling.AuthorizeInteractionResponseGenerator
+User consented to scopes: ["openid", "profile", "api1"]
+
+[18:16:24 Debug] IdentityServer4.ResponseHandling.AuthorizeInteractionResponseGenerator
+User indicated to remember consent for scopes: ["openid", "profile", "api1"]
+
+[18:16:24 Debug] IdentityServer4.Services.DefaultConsentService
+Client allows remembering consent, and consent given. Updating consent store for subject: 88421113
+
+[18:16:24 Debug] IdentityServer4.ResponseHandling.AuthorizeResponseGenerator
+Creating Authorization Code Flow response.
+
+[18:16:24 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": "https://localhost:5004/callback.html", "Endpoint": "Authorize", "SubjectId": "88421113", "Scopes": "openid profile api1", "GrantType": "authorization_code", "Tokens": [{"TokenType": "code", "TokenValue": "****w9YI", "$type": "Token"}], "Category": "Token", "Name": "Token Issued Success", "EventType": "Success", "Id": 2000, "Message": null, "ActivityId": "0HLSOGR70BENS:00000041", "TimeStamp": "2020-01-14T00:16:24.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "TokenIssuedSuccessEvent"}
+
+[18:16:24 Debug] IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+Authorize endpoint response
+{"SubjectId": "88421113", "ClientId": "js", "RedirectUri": "https://localhost:5004/callback.html", "State": "0f6262b83b3a4a119604caea0ab6720b", "Scope": "openid profile api1", "Error": null, "ErrorDescription": null, "$type": "AuthorizeResponseLog"}
+
+[18:16:24 Debug] IdentityServer4.Hosting.IdentityServerAuthenticationService
+Augmenting SignInContext
+
+[18:16:24 Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: Cookies signed in.
+
+[18:16:25 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CORS request made for path: /.well-known/openid-configuration from origin: https://localhost:5004
+
+[18:16:25 Debug] IdentityServer4.Services.InMemoryCorsPolicyService
+Client list checked and origin: https://localhost:5004 is allowed
+
+[18:16:25 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CorsPolicyService allowed origin: https://localhost:5004
+
+[18:16:25 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration matched to endpoint type Discovery
+
+[18:16:25 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+
+[18:16:25 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+
+[18:16:25 Debug] IdentityServer4.Endpoints.DiscoveryEndpoint
+Start discovery request
+
+[18:16:25 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CORS request made for path: /connect/token from origin: https://localhost:5004
+
+[18:16:25 Debug] IdentityServer4.Services.InMemoryCorsPolicyService
+Client list checked and origin: https://localhost:5004 is allowed
+
+[18:16:25 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CorsPolicyService allowed origin: https://localhost:5004
+
+[18:16:25 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/token matched to endpoint type Token
+
+[18:16:25 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+
+[18:16:25 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+
+[18:16:25 Debug] IdentityServer4.Endpoints.TokenEndpoint
+Start token request.
+
+[18:16:25 Debug] IdentityServer4.Validation.ClientSecretValidator
+Start client validation
+
+[18:16:25 Debug] IdentityServer4.Validation.BasicAuthenticationSecretParser
+Start parsing Basic Authentication secret
+
+[18:16:25 Debug] IdentityServer4.Validation.PostBodySecretParser
+Start parsing for secret in post body
+
+[18:16:25 Debug] IdentityServer4.Validation.PostBodySecretParser
+client id without secret found
+
+[18:16:25 Debug] IdentityServer4.Validation.SecretParser
+Parser found secret: PostBodySecretParser
+
+[18:16:25 Debug] IdentityServer4.Validation.SecretParser
+Secret id found: js
+
+[18:16:25 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:25 Debug] IdentityServer4.Validation.ClientSecretValidator
+Public Client - skipping secret validation success
+
+[18:16:25 Debug] IdentityServer4.Validation.ClientSecretValidator
+Client validation success
+
+[18:16:25 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "js", "AuthenticationMethod": "NoSecret", "Category": "Authentication", "Name": "Client Authentication Success", "EventType": "Success", "Id": 1010, "Message": null, "ActivityId": "0HLSOGR70BENS:00000045", "TimeStamp": "2020-01-14T00:16:25.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "ClientAuthenticationSuccessEvent"}
+
+[18:16:25 Debug] IdentityServer4.Validation.TokenRequestValidator
+Start token request validation
+
+[18:16:25 Debug] IdentityServer4.Validation.TokenRequestValidator
+Start validation of authorization code token request
+
+[18:16:25 Debug] IdentityServer4.Validation.TokenRequestValidator
+Client required a proof key for code exchange. Starting PKCE validation
+
+[18:16:25 Debug] IdentityServer4.Test.TestUserProfileService
+IsActive called from: AuthorizationCodeValidation
+
+[18:16:25 Debug] IdentityServer4.Validation.TokenRequestValidator
+Validation of authorization code token request success
+
+[18:16:25 Information] IdentityServer4.Validation.TokenRequestValidator
+Token request validation success, {"ClientId": "js", "ClientName": "JavaScript Client", "GrantType": "authorization_code", "Scopes": null, "AuthorizationCode": "cS73s45QKEZuNZUympKyXg69m2nt-UiiDu7v_1Rw9YI", "RefreshToken": null, "UserName": null, "AuthenticationContextReferenceClasses": null, "Tenant": null, "IdP": null, "Raw": {"client_id": "js", "code": "cS73s45QKEZuNZUympKyXg69m2nt-UiiDu7v_1Rw9YI", "redirect_uri": "https://localhost:5004/callback.html", "code_verifier": "ebddac3487364cb99b1bb13e8ac367938cf63d5c51204aa286ec9290aee72196eddf274decc64024b4c5504f6a8ba5fc", "grant_type": "authorization_code"}, "$type": "TokenRequestValidationLog"}
+
+[18:16:25 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:25 Debug] IdentityServer4.Services.DefaultClaimsService
+Getting claims for access token for client: js
+
+[18:16:25 Debug] IdentityServer4.Services.DefaultClaimsService
+Getting claims for access token for subject: 88421113
+
+[18:16:25 Debug] IdentityServer4.Test.TestUserProfileService
+Get profile called for subject 88421113 from client JavaScript Client with claim types [] via ClaimsProviderAccessToken
+
+[18:16:25 Debug] IdentityServer4.Test.TestUserProfileService
+Issued claims: []
+
+[18:16:25 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client js succeeded.
+
+[18:16:25 Debug] IdentityServer4.Services.DefaultClaimsService
+Getting claims for identity token for subject: 88421113 and client: js
+
+[18:16:25 Debug] IdentityServer4.Services.DefaultClaimsService
+In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more
+user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+
+[18:16:25 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "js", "ClientName": "JavaScript Client", "RedirectUri": null, "Endpoint": "Token", "SubjectId": "88421113", "Scopes": "openid profile api1", "GrantType": "authorization_code", "Tokens": [{"TokenType": "id_token", "TokenValue": "****ekfQ", "$type": "Token"}, {"TokenType": "access_token", "TokenValue": "****mzbA", "$type": "Token"}], "Category": "Token", "Name": "Token Issued Success", "EventType": "Success", "Id": 2000, "Message": null, "ActivityId": "0HLSOGR70BENS:00000045", "TimeStamp": "2020-01-14T00:16:25.0000000Z", "ProcessId": 30696, "LocalIpAddress": "127.0.0.1:5003", "RemoteIpAddress": "127.0.0.1", "$type": "TokenIssuedSuccessEvent"}
+
+[18:16:25 Debug] IdentityServer4.Endpoints.TokenEndpoint
+Token request success.
+
+[18:17:30 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CORS request made for path: /.well-known/openid-configuration from origin: https://localhost:5004
+
+[18:17:30 Debug] IdentityServer4.Services.InMemoryCorsPolicyService
+Client list checked and origin: https://localhost:5004 is allowed
+
+[18:17:30 Debug] IdentityServer4.Hosting.CorsPolicyProvider
+CorsPolicyService allowed origin: https://localhost:5004
+
+[18:17:30 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration matched to endpoint type Discovery
+
+[18:17:30 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+
+[18:17:30 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+
+[18:17:30 Debug] IdentityServer4.Endpoints.DiscoveryEndpoint
+Start discovery request
+
+[18:17:30 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/endsession matched to endpoint type Endsession
+
+[18:17:30 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionEndpoint
+
+[18:17:30 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionEndpoint for /connect/endsession
+
+[18:17:30 Debug] IdentityServer4.Endpoints.EndSessionEndpoint
+Processing signout request for 88421113
+
+[18:17:30 Debug] IdentityServer4.Validation.EndSessionRequestValidator
+Start end session request validation
+
+[18:17:30 Information] IdentityServer4.Validation.EndSessionRequestValidator
+End session request validation success
+{"ClientId": null, "ClientName": null, "SubjectId": "88421113", "PostLogOutUri": null, "State": null, "Raw": {"post_logout_redirect_uri": "https://localhost:5004/index.html"}, "$type": "EndSessionRequestValidationLog"}
+
+[18:17:30 Debug] IdentityServer4.Endpoints.EndSessionEndpoint
+Success validating end session request from null
