@@ -20,7 +20,7 @@ export default {
         const user = await authService.getUser();
         if (user && user.isAuthenticated) {
             this.setUser(user);
-            console.info("Logged In: ", user.name, user.bemsId);
+            console.info("Logged In: ", user.name, user.userName);
         } else {
             console.info("No user initially logged in.");
         }

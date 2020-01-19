@@ -1,6 +1,5 @@
 # SSO Tile with Vue.js
 
-###### by _Nathan Strutz_, nathan.j.strutz@boeing.com
 
 An application to show Vue.js connecting to PCF Single Sign-On Services (SSO Tile).
 
@@ -22,7 +21,6 @@ Open the browser at the location indicated, which should be http://localhost:808
 
 ![SSO Tile Vue Screenshot](public/screenshot.png)
 
-The home page will indicate that you are not authenticated. Navigate to the "Secure" page, which will begin the SSO authentication process, and when you successfully authenticate with Boeing's SSO, it will show the content on the secure page. Once authenticated, navigating back to the "Home" page will display your authentication details.
 
 ## OIDC-Client-JS Vs. Cloud Foundry
 
@@ -34,14 +32,12 @@ The solution then is to use an older version of OIDC-Client-JS. **Version 1.5.4*
 
 ## SSO Tile Configuration
 
-Configuration of the SSO application service is complex and also critically important. The default configuration will not authenticate against Boeing's SSO services, nor will it contain helpful information our applications need like the BEMSID.
 
 #### Add the SSO Tile Service
 
 1. Log in to the PCF apps manager
 2. Select the proper Org (app/team area) and Space (dev/test/etc)
 3. Go to Services and click the Add A Service button
-4. Select the Single Sign-On service, you need the apps-bemsid-only service
 5. Give your instance a name and don't bind any apps
 
 #### Configure the identity zone
@@ -55,7 +51,6 @@ Add a new "app" or identity zone and make these changes:
 1. Give this identity zone a name
 2. Leave the application type at Web App
 3. The App Launch URL area is unimportant
-4. For Identity Providers, select PingFederationSSO and deselect Internal User Store. PingFederate is how to tie this SSO instance into Boeing's SSO (like WSSO).
 5. Redirect URIs are the valid base URLs that this Tile will allow to authenticate, this is a comma-separated list of all the URLs you may have the app running at and should be allowed to get a token
 6. For Authorization Scopes, add the `profile` scope, which gives us person-identifying data in the token
     - The Select Scopes dialog may be confusing, but make sure Profile is selected _and_ checked when done

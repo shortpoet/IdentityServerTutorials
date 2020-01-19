@@ -1,6 +1,6 @@
 export default class AuthUser {
     isAuthenticated = false;
-    bemsId = "";
+    userName = "";
     email = "";
     name = "";
     token = "";

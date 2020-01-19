@@ -16,7 +16,7 @@ export default {
             if (!user.isAuthenticated) return;
 
             this.setUser(user);
-            console.info("Ran through SSO Tile and logged in: ", user.name, user.bemsId);
+            console.info("Ran through SSO Tile and logged in: ", user.name, user.userName);
 
             let returnPath;
             try {

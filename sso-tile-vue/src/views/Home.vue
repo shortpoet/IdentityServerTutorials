@@ -5,7 +5,7 @@
         <pre>
 Authenticated: {{ user.isAuthenticated }}
 Email Address: {{ user.email }}
-BEMS ID: {{ user.bemsId }}
+BEMS ID: {{ user.userName }}
 Name: {{ user.name }}</pre>
     </div>
 </template>

@@ -19,7 +19,7 @@ export default {
                 if (!user.isAuthenticated) return;
 
                 this.setUser(user);
-                console.info("Grabbed login info from local data: ", user.name, user.bemsId);
+                console.info("Grabbed login info from local data: ", user.name, user.userName);
 
                 let returnPath;
                 try {
